@@ -26,12 +26,12 @@ app.use(express.json())
 
 app.use(cors())
 
-app.use("/admin", adminRoutes)
-app.use("/user", userRoutes)
-app.use("/product", productRoutes)
-app.use("/category", categoryRoutes)
-app.use("/order", orderRoutes)
-app.use("/cart", cartRoutes)
+app.use("api/admin", adminRoutes)
+app.use("api/user", userRoutes)
+app.use("api/product", productRoutes)
+app.use("api/category", categoryRoutes)
+app.use("/api/order", orderRoutes)
+app.use("/api/cart", cartRoutes)
 
 // Creating PaymentIntent to send the ClientSecret to the client
 app.post(
@@ -52,10 +52,10 @@ app.post(
   }
 )
 
-app.use(express.static(path.join(__dirname, '../ecommerce-frontend/build')));
+app.use(express.static(path.join(__dirname, './build')));
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../ecommerce-frontend/build', 'index.html'));
+  res.sendFile(path.join(__dirname, './build', 'index.html'));
 });
 
 app.use((error, req, res, next) => {

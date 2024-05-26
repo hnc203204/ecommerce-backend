@@ -13,7 +13,7 @@ ENV ADMIN_EMAIL=admin@gmail.com
 ENV ADMIN_PASSWORD=admin
 ENV STRIP_SECRET_KEY=sk_test_51J3
 ENV MONGO_URI=mongodb://mongo:27017/ecommerce 
-ENV AI_API_ENDPOINT=http://localhost:5522/api/submit_basket
+ENV AI_API_ENDPOINT=https://apriori-engine-6d764e48ad2a.herokuapp.com/api/submit_basket
 
 COPY . .
 
