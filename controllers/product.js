@@ -186,6 +186,7 @@ const apriori = async (categories) => {
   }
   resp = await fetch(process.env.AI_URL, options);
   result = await resp.json();
+  console.log(result)
   return result;
 }
 
